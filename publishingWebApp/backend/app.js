@@ -4,10 +4,12 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 //import routes
+const signInRouter = require("./routes/signInRouter")
+const signUpRouter = require("./routes/signUpRouter")
+const authRouter = require("./routes/authRouter")
 
 const app = express();
-
-//express json middleware
+//middlewares
 app.use(express.json());
 app.use(cors());
 /*app.use(
@@ -18,6 +20,10 @@ app.use(cors());
 );*/
 
 app.use(cookieParser());
+
+app.use("/signIn", signInRouter);
+app.use("/signUp", signUpRouter);
+app.use("/auth", authRouter);
 
 const { db } = require("./models/index");
 db.sequelize
