@@ -10,12 +10,12 @@ module.exports = {
         emailAddress: body.emailAddress,
         password: await hash(body.password, 10),
       };
-      /*const isUser = await userModel.getUserByUserId(body.userId);
+      const isUser = await userModel.getUserByUserId(body.userId);
       if (isUser.error || isUser.response) {
         return {
           error: "This user already exists!",
         }
-      } */
+      } 
       const newUser = await userModel.createUser(user);
       if (newUser.error) {
         return {

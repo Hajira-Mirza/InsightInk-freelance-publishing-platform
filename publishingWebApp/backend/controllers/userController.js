@@ -52,23 +52,6 @@ module.exports = {
     }
   },
 
-  getUserByUserId: async (userId) => {
-    try {
-      const user = await models.users.findOne({
-        where: {
-          userId: userId,
-        },
-      });
-      return {
-        response: user,
-      };
-    } catch (error) {
-      return {
-        error: error.message,
-      };
-    }
-  },
-
   updateUser: async (req, res) => {
     try {
       const validate = await updateUserSchema.validateAsync(req.body);

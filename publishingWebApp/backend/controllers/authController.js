@@ -15,10 +15,10 @@ module.exports = {
           error: isUser.error,
         });
       }
-      /*res.cookie("token", isUser.response, {
+      res.cookie("token", isUser.response, {
         maxAge: 600000,
         httpOnly: true,
-      });*/
+      });
       return res.send({
         response: true,
       });

@@ -10,13 +10,12 @@ const authRouter = require("./routes/authRouter")
 const app = express();
 //middlewares
 app.use(express.json());
-app.use(cors());
-/*app.use(
+app.use(
   cors({
     origin: true,
     credentials: true,
   })
-);*/
+);
 
 app.use(cookieParser());
 

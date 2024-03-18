@@ -8,13 +8,13 @@ const {
 
 } = require("../controllers/userController");
 
-//const { middleware } = require("../middlewares/authMiddleware");
+const { middleware } = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
 router.post("/createUser", createUser);
 
-router.get("/getAllUsers", getAllUsers);
+router.get("/getAllUsers", middleware, getAllUsers);
 
 router.put("/updateUser", updateUser);
 

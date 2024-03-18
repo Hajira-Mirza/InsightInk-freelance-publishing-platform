@@ -2,6 +2,7 @@ import { FaGoogle, FaFacebookF, FaTwitter, FaLinkedinIn, FaRegEnvelope,} from "r
 import{MdLockOutline} from "react-icons/md";
 import PropTypes, { useState } from "react";
 import axios from "axios";
+
 SignIn.propTypes = {
   setSignIn: PropTypes.isRequired,
 };
@@ -34,12 +35,12 @@ function SignIn({ setSignIn }) {
             <div className="text-left font-bold">
               <span className="text-violet-500">Company</span> Name
             </div>
-            <div className="py-7">
+            <div className="py-4">
               <h2 className="text-4xl font-bold text-violet-500 mb-2">Sign in</h2>
-              <p className="text-sm text-gray-400 mb-1 mt-4">Streamline Your Publishing Process, Amplify Your Impact</p>
+              <p className="text-sm text-gray-400 mb-1 mt-3">Streamline Your Publishing Process, Amplify Your Impact</p>
             </div>
-            <div className="flex flex-col items-center mb-5 drop-shadow-lg">
-                <div className="bg-gray-50 w-64 p-3 mb-4 flex items-center rounded-full">
+            <div className="flex flex-col items-center mb-3 drop-shadow-lg">
+                <div className="bg-gray-50 w-80 p-3 mb-4 flex items-center rounded-full">
                     <FaRegEnvelope className="text-gray-400 mr-2"/>
                 <input type="email" name="email" placeholder="Enter your email here" required className="bg-transparent focus-none outline-none text-sm flex-1"
                 onChange={(event) => {
@@ -48,7 +49,7 @@ function SignIn({ setSignIn }) {
                 />
                 </div>
 
-                <div className="bg-gray-50 w-64 p-3 mb-4 flex items-center rounded-full">
+                <div className="bg-gray-50 w-80 p-3 mb-4 flex items-center rounded-full">
                     <MdLockOutline className="text-gray-400 mr-2"/>
                 <input type="password" name="password" placeholder="Enter your password here" required className="bg-transparent focus-none outline-none text-sm flex-1"
                 onChange={(event) => {
@@ -56,13 +57,13 @@ function SignIn({ setSignIn }) {
                   }}
                 />
                 </div>
-                <div className="flex w-64 justify-between mt-2">
+                <div className="flex w-80 justify-between mt-1">
                     <label className="text-gray-700 flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1 accent-violet-500"/>Remember me</label>
                     <a href="a" className="text-xs text-gray-700">Forgot password?</a>
                 </div>
                 
             </div>
-            <p className="text-sm text-gray-400 mb-5">Or with other social platform</p>
+            <p className="text-sm text-gray-400 mb-4">Or with other social platform</p>
             <div className="flex justify-center my-4">
               <a href="a" className="border-2 border-gray-200 rounded-full p-3 mx-1">
                 <FaGoogle className="text-sm text-violet-500"/>
@@ -79,8 +80,8 @@ function SignIn({ setSignIn }) {
             </div>{/*social accounts*/}
             <button 
             disabled={!(emailAddress, password)}
-            className="text-white border-2 bg-violet-500 border-violet-500 mt-5 rounded-full 
-                px-12 py-2 inline-block font-semi-bold hover:bg-white hover:text-violet-500 hover:drop-shadow-xl"
+            className="text-white border-2 bg-violet-500 border-violet-500 mt-2 rounded-full 
+                px-12 py-2 inline-block font-semi-bold hover:bg-white hover:text-violet-500 hover:drop-shadow-xl hover:border-violet-500 focus:outline-none"
                 onClick={() => {
                     void signIn();
                   }}>Sign In</button>
