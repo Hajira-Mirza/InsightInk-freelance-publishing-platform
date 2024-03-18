@@ -27,18 +27,18 @@ function SignUp() {
             <div className="py-4">
               <h2 className="text-4xl font-bold text-violet-500 mb-2">Create your account</h2>
             </div>
-            <div className="flex flex-col items-center mb-4">
-            <div className="bg-gray-100 w-64 p-3 mb-3 flex items-center rounded-full">
+            <div className="flex flex-col items-center mb-4 drop-shadow-lg">
+            <div className="bg-gray-50 w-64 p-3 mb-3 flex items-center rounded-full">
                     <FaRegUser className="text-gray-400 mr-2"/>
                 <input type="username" name="username" placeholder="Enter your name here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
                 </div>
 
-                <div className="bg-gray-100 w-64 p-3 mb-3 flex items-center rounded-full">
+                <div className="bg-gray-50 w-64 p-3 mb-3 flex items-center rounded-full">
                     <FaRegEnvelope className="text-gray-400 mr-2"/>
                 <input type="email" name="email" placeholder="Enter your email here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
                 </div>
 
-                <div className="bg-gray-100 w-64 p-3 mb-3 flex items-center rounded-full">
+                <div className="bg-gray-50 w-64 p-3 mb-3 flex items-center rounded-full">
                     <MdLockOutline className="text-gray-400 mr-2"/>
                 <input type="password" name="password" placeholder="Enter your password here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
                 </div>

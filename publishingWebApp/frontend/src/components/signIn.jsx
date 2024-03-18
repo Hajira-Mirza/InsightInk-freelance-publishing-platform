@@ -11,15 +11,15 @@ function SignIn() {
             </div>
             <div className="py-7">
               <h2 className="text-4xl font-bold text-violet-500 mb-2">Sign in</h2>
-              <p className="text-sm text-gray-400 mb-1 mt-4">Transforming Ideas into Bestsellers, One Click at a Time.</p>
+              <p className="text-sm text-gray-400 mb-1 mt-4">Streamline Your Publishing Process, Amplify Your Impact</p>
             </div>
-            <div className="flex flex-col items-center mb-5">
-                <div className="bg-gray-100 w-64 p-3 mb-4 flex items-center rounded-full">
+            <div className="flex flex-col items-center mb-5 drop-shadow-lg">
+                <div className="bg-gray-50 w-64 p-3 mb-4 flex items-center rounded-full">
                     <FaRegEnvelope className="text-gray-400 mr-2"/>
                 <input type="email" name="email" placeholder="Enter your email here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
                 </div>
 
-                <div className="bg-gray-100 w-64 p-3 mb-4 flex items-center rounded-full">
+                <div className="bg-gray-50 w-64 p-3 mb-4 flex items-center rounded-full">
                     <MdLockOutline className="text-gray-400 mr-2"/>
                 <input type="password" name="password" placeholder="Enter your password here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
                 </div>

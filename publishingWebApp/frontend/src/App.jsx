@@ -1,9 +1,9 @@
-import SignIn from "./components/signIn";
+import SignUp from "./components/signUp";
 function App() {
   return (
     <>
       <div className="w-screen h-screen bg-gray-300 flex justify-center">
-        <SignIn/>
+        <SignUp/>
       </div>
     </>
   );
