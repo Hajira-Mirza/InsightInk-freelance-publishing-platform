@@ -1,24 +1,25 @@
-const signInModel = require("../models/signInModel");
+const userModel = require("../models/userModel");
 const { hash } = require("bcryptjs");
 const { v4: uuid } = require("uuid");
 module.exports = {
   createUser: async (body) => {
     try {
-      const isUser = await signInModel.getUserByUserId(body.userId);
-      if (isUser.error || isUser.response) {
-        return {
-          error: "This user already exists!",
-        };
-      }
       const user = {
         userId: uuid(),
+        userName: body.userName,
         emailAddress: body.emailAddress,
         password: await hash(body.password, 10),
       };
-      const createdUser = await signInModel.createUser(user);
-      if (createdUser.error) {
+      /*const isUser = await userModel.getUserByUserId(body.userId);
+      if (isUser.error || isUser.response) {
         return {
-          error: createdUser.error,
+          error: "This user already exists!",
+        }
+      } */
+      const newUser = await userModel.createUser(user);
+      if (newUser.error) {
+        return {
+          error: newUser.error,
         };
       }
     } catch (error) {
@@ -29,7 +30,7 @@ module.exports = {
   },
   getAllUsers: async () => {
     try {
-      const users = await signInModel.getAllUsers();
+      const users = await userModel.getAllUsers();
       if (users.error) {
         return {
           error: users.error,
@@ -46,7 +47,7 @@ module.exports = {
   },
   updateUser: async (body) => {
     try {
-      const user = await signInModel.updateUser(body, body.userId);
+      const user = await userModel.updateUser(body, body.userId);
       if (user.error) {
         return {
           error: user.error,
@@ -63,7 +64,7 @@ module.exports = {
   },
   deleteUser: async (query) => {
     try {
-      const user = await signInModel.deleteUser(query.userId);
+      const user = await userModel.deleteUser(query.userId);
       if (deletedUser.error) {
         return {
           error: user.error,

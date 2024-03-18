@@ -4,8 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 //import routes
-const signInRouter = require("./routes/signInRouter")
-const signUpRouter = require("./routes/signUpRouter")
+const signUpRouter = require("./routes/userRouter")
 const authRouter = require("./routes/authRouter")
 
 const app = express();
@@ -21,8 +20,7 @@ app.use(cors());
 
 app.use(cookieParser());
 
-app.use("/signIn", signInRouter);
-app.use("/signUp", signUpRouter);
+app.use("/user", signUpRouter);
 app.use("/auth", authRouter);
 
 const { db } = require("./models/index");

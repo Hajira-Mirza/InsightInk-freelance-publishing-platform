@@ -3,7 +3,7 @@ const { models } = require("./index");
 module.exports = {
   createUser: async (body) => {
     try {
-      const user = await models.signIn.create({ ...body });
+      const user = await models.user.create({ ...body });
       return {
         response: user,
       };
@@ -15,7 +15,7 @@ module.exports = {
   },
   getAllUsers: async () => {
     try {
-      const users = await models.signIn.getAllUsers();
+      const users = await models.user.findAll();
       return {
         response: users,
       };
@@ -27,7 +27,7 @@ module.exports = {
   },
   getUserByUserId: async (userId) => {
     try {
-      const user = await models.signIn.findOne({
+      const user = await models.user.findOne({
         where: {
           userId: userId,
         },
@@ -43,7 +43,7 @@ module.exports = {
   },
   updateUser: async (body, userId) => {
     try {
-      const user = await models.signIn.update(
+      const user = await models.user.update(
         {
           ...body,
         },
@@ -64,7 +64,7 @@ module.exports = {
   },
   deleteUser: async (userId) => {
     try {
-      const user = await models.signIn.destroy({
+      const user = await models.user.destroy({
         where: {
           userId: userId,
         },

@@ -1,13 +1,8 @@
 const sequelize = require("../config/dbConfig");
-const signUp = require("./definitions/signUp");
-const signIn = require("./definitions/signIn");
-
-signUp.hasOne(signIn, { foreignKey: "userId"});
-signIn.belongsTo(signUp, { foreignKey: "userId"});
+const user = require("./definitions/user");
 
 const models = {
-    signUp,
-    signIn,
+    user,
 };
 
 const db = {};

@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../../config/dbConfig");
 
-class signUp extends Model {}
+class user extends Model {}
 
-signUp.init(
+user.init(
   {
     userId: {
       primaryKey: true,
@@ -12,15 +12,15 @@ signUp.init(
     userName: {
       unique: true,
       allowNull: false,
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING(34),
     },
     emailAddress: {
       unique: true,
-      allowNull: false,
       type: DataTypes.STRING(),
+      allowNull: false,
     },
     password: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING(),
       allowNull: false,
       defaultValue: false,
     },
@@ -31,4 +31,4 @@ signUp.init(
     sequelize,
   }
 );
-module.exports = signUp;
+module.exports = user;

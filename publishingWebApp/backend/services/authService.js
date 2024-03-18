@@ -1,11 +1,11 @@
-const signInrModel = require("../models/signInModel");
+const userModel = require("../models/userModel");
 const { compare } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");
 require("dotenv").config();
 module.exports = {
-  signIn: async (body) => {
+  signUp: async (body) => {
     try {
-      const user = await signInModel.getUserByUserId(body.userId);
+      const user = await userModel.getUserByUserId(body.userId);
       if (user.error || user.response == null) {
         return {
           error: "Invalid Credentials",
