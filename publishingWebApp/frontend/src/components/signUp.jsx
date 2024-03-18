@@ -43,13 +43,12 @@ function SignUp() {
                 <input type="password" name="password" placeholder="Enter your password here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
                 </div>
                 <div className="flex w-64 justify-between mb-4">
-                    <label className="text-gray-700 flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1 accent-violet-500 rounded-sm"/>Remember me</label>
+                    <label className="text-gray-700 flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1 accent-violet-500"/>Remember me</label>
                 </div>
                 
             </div>
             <p className="text-sm text-gray-400 mb-4">Or sign in with your social media account</p>
-            <div className="flex justify-center my-.
-            .4">
+            <div className="flex justify-center my-4">
               <a href="a" className="border-2 border-gray-200 rounded-full p-3 mx-1">
                 <FaGoogle className="text-sm text-violet-500"/>
               </a>

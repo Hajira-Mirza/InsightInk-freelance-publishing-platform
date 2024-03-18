@@ -57,7 +57,7 @@ function SignIn({ setSignIn }) {
                 />
                 </div>
                 <div className="flex w-64 justify-between mt-2">
-                    <label className="text-gray-700 flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1"/>Remember me</label>
+                    <label className="text-gray-700 flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1 accent-violet-500"/>Remember me</label>
                     <a href="a" className="text-xs text-gray-700">Forgot password?</a>
                 </div>
                 
