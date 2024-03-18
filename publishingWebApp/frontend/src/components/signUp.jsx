@@ -48,7 +48,8 @@ function SignUp() {
                 
             </div>
             <p className="text-sm text-gray-400 mb-4">Or sign in with your social media account</p>
-            <div className="flex justify-center my-4">
+            <div className="flex justify-center my-.
+            .4">
               <a href="a" className="border-2 border-gray-200 rounded-full p-3 mx-1">
                 <FaGoogle className="text-sm text-violet-500"/>
               </a>

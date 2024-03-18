@@ -1,6 +1,31 @@
 import { FaGoogle, FaFacebookF, FaTwitter, FaLinkedinIn, FaRegEnvelope,} from "react-icons/fa";
 import{MdLockOutline} from "react-icons/md";
-function SignIn() {
+import PropTypes, { useState } from "react";
+import axios from "axios";
+SignIn.propTypes = {
+  setSignIn: PropTypes.isRequired,
+};
+function SignIn({ setSignIn }) {
+  const [emailAddress, setEmailAddress] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const signIn = async () => {
+    const { data } = await axios.post(
+      "http://localhost:7000/auth/signUp",
+      {
+        emailAddress,
+        password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    if (data.error) {
+      return alert("Invalid credentials!");
+    }
+    return alert("You've logged in successfully!");
+  };
+
   return (
     <>
       <div className="flex flex-col items-center justify-center w-full h-full px-50 p-4 text-center">
@@ -16,12 +41,20 @@ function SignIn() {
             <div className="flex flex-col items-center mb-5 drop-shadow-lg">
                 <div className="bg-gray-50 w-64 p-3 mb-4 flex items-center rounded-full">
                     <FaRegEnvelope className="text-gray-400 mr-2"/>
-                <input type="email" name="email" placeholder="Enter your email here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
+                <input type="email" name="email" placeholder="Enter your email here" required className="bg-transparent focus-none outline-none text-sm flex-1"
+                onChange={(event) => {
+                    setEmailAddress(event.target.value);
+                  }}
+                />
                 </div>
 
                 <div className="bg-gray-50 w-64 p-3 mb-4 flex items-center rounded-full">
                     <MdLockOutline className="text-gray-400 mr-2"/>
-                <input type="password" name="password" placeholder="Enter your password here" className="bg-transparent focus-none outline-none text-sm flex-1"/>
+                <input type="password" name="password" placeholder="Enter your password here" required className="bg-transparent focus-none outline-none text-sm flex-1"
+                onChange={(event) => {
+                    setPassword(event.target.value);
+                  }}
+                />
                 </div>
                 <div className="flex w-64 justify-between mt-2">
                     <label className="text-gray-700 flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1"/>Remember me</label>
@@ -44,8 +77,13 @@ function SignIn() {
                 <FaLinkedinIn className="text-sm text-violet-500"/>
               </a>
             </div>{/*social accounts*/}
-            <a href="a" className="text-white border-2 bg-violet-500 border-violet-500 mt-5 rounded-full 
-                px-12 py-2 inline-block font-semi-bold hover:bg-white hover:text-violet-500 hover:drop-shadow-xl">Sign In</a>
+            <button 
+            disabled={!(emailAddress, password)}
+            className="text-white border-2 bg-violet-500 border-violet-500 mt-5 rounded-full 
+                px-12 py-2 inline-block font-semi-bold hover:bg-white hover:text-violet-500 hover:drop-shadow-xl"
+                onClick={() => {
+                    void signIn();
+                  }}>Sign In</button>
           </div>
           {/*signIn*/}
           <div className="w-1/2 bg-violet-500 text-white rounded-l-2xl py-36 px-20 drop-shadow-2xl">
@@ -57,7 +95,11 @@ function SignIn() {
             </p>
             <p className="text-white text-sm mb-5">Not a member yet?</p>
             <button
-              className="text-white border-2 border-white bg-violet-500 rounded-full px-12 py-2 inline-block font-semi-bold hover:bg-white hover:border-white hover:text-violet-500 hover:outline-none focus:outline-none"
+              className="text-white border-2 border-white bg-violet-500 rounded-full px-12 py-2 inline-block 
+              font-semi-bold hover:bg-white hover:border-white hover:text-violet-500 hover:outline-none focus:outline-none"
+              onClick={() => {
+              setSignIn(false);
+            }}
             >
               Sign Up
             </button>
