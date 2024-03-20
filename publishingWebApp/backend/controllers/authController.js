@@ -1,15 +1,15 @@
 const joi = require("joi");
 const authService = require("../services/authService");
 
-const signUpSchema = joi.object().keys({
+const signInSchema = joi.object().keys({
   emailAddress: joi.string().min(1).required(),
   password: joi.string().min(6).required(),
 });
 module.exports = {
-  signUp: async (req, res) => {
+  signIn: async (req, res) => {
     try {
-      const validate = await signUpSchema.validateAsync(req.body);
-      const isUser = await authService.signUp(validate);
+      const validate = await signInSchema.validateAsync(req.body);
+      const isUser = await authService.signIn(validate);
       if (isUser.error) {
         return res.send({
           error: isUser.error,

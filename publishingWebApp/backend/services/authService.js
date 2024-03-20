@@ -3,7 +3,7 @@ const { compare } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");
 require("dotenv").config();
 module.exports = {
-  signUp: async (body) => {
+  signIn: async (body) => {
     try {
       const user = await userModel.getUserByUserId(body.userId);
       if (user.error || user.response == null) {
