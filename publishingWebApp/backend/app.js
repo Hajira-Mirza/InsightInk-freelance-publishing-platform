@@ -4,7 +4,6 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 //import routes
-const signUpRouter = require("./routes/signUpRouter");
 const userRouter = require("./routes/userRouter");
 const authRouter = require("./routes/authRouter");
 
@@ -20,7 +19,6 @@ app.use(
 
 app.use(cookieParser());
 
-app.use("signUp", signUpRouter);
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 
