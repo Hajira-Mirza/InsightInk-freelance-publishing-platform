@@ -25,21 +25,17 @@ module.exports = {
       };
     }
   },
-  getUserByUserEmail: async (emailAddress) => {
-    console.log("id", emailAddress)
+  getUserByUserByEmail: async (emailAddress) => {
     try {
       const user = await models.user.findOne({
         where: {
           emailAddress: emailAddress,
         },
       });
-      console.log("userget", user);
       return {
         response: user,
       };
     } catch (error) {
-      console.log("userer", error.message);
-
       return {
         error: error.message,
       };
