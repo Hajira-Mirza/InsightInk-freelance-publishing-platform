@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const knex = require("knex");
 
 //import routes
 const userRouter = require("./routes/userRouter");
