@@ -25,7 +25,7 @@ module.exports = {
       };
     }
   },
-  getUserByUserByEmail: async (emailAddress) => {
+  getUserByUserEmail: async (emailAddress) => {
     try {
       const user = await models.user.findOne({
         where: {

@@ -4,7 +4,7 @@ const { v4: uuid } = require("uuid");
 module.exports = {
   createUser: async (body) => {
     try {
-      const isUser = await userModel.getUserByUserByEmail(body.emailAddress);
+      const isUser = await userModel.getUserByUserEmail(body.emailAddress);
       if (isUser.error || isUser.response) {
         return {
           error: "This user already exists!",
