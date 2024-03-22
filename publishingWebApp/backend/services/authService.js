@@ -4,13 +4,10 @@ const { sign } = require("jsonwebtoken");
 require("dotenv").config();
 module.exports = {
   signIn: async (body) => {
-    console.log("bodyyy", body);
     try {
       const user = await userModel.getUserByUserEmail(body.emailAddress);
       if (user.error || user.response == null) {
-        return {
-          error: "Invalid Credentials ud",
-        };
+        return {};
       }
       const isValid = await compare(
         body.password,
@@ -18,7 +15,7 @@ module.exports = {
       );
       if (!isValid) {
         return {
-          error: "Invalid Credentials com",
+          error: "Invalid Credentials",
         };
       }
 
