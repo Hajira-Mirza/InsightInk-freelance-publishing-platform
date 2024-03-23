@@ -7,7 +7,9 @@ module.exports = {
     try {
       const user = await userModel.getUserByUserEmail(body.emailAddress);
       if (user.error || user.response == null) {
-        return {};
+        return {
+          error: "user Invalid Credentials",
+        };
       }
       const isValid = await compare(
         body.password,

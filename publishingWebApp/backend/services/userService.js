@@ -22,6 +22,9 @@ module.exports = {
           error: newUser.error,
         };
       }
+      return {
+        response: newUser.response,
+      };
     } catch (error) {
       return {
         error: error.message,

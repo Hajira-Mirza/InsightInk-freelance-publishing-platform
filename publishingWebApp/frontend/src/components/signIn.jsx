@@ -12,7 +12,7 @@ function SignIn({ setSignIn }) {
 
   const signIn = async () => {
     const { data } = await axios.post(
-      "http://localhost:7000/auth/signUp",
+      "http://localhost:7000/auth/signIn",
       {
         emailAddress,
         password,
@@ -29,7 +29,7 @@ function SignIn({ setSignIn }) {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center w-full h-full px-50 p-4 text-center">
+      <div className="flex flex-col items-center justify-center w-full h-full px-50 p-1 text-center">
         <div className="bg-white rounded-2xl shadow-2xl flex w-full h-full">
           <div className="w-1/2 bg-white text-black p-5">
             <div className="text-left font-bold">
