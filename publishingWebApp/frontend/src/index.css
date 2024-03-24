@@ -15,7 +15,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/* .isActive {
+  background-color: violet;
+  color: white;
+  border-radius: 2px;
+  display: inline-block;
+} */
 a {
   font-weight: 500;
   color: #646cff;

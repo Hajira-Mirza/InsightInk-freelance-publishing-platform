@@ -106,7 +106,8 @@ const signUp = async () => {
             <button
             disabled={!( userName, emailAddress, password )}
              className="text-white border-2 bg-violet-500 border-violet-500 mt-1 rounded-full 
-                px-12 py-2 inline-block font-semi-bold hover:bg-white hover:text-violet-500 hover:drop-shadow-xl focus:outline-none focus:border-violet-500 hover:border-violet-500"
+                px-12 py-2 inline-block font-semi-bold hover:bg-white hover:text-violet-500 
+                hover:drop-shadow-xl focus:outline-none focus:border-violet-500 hover:border-violet-500"
                 onClick={() => {
                     void signUp();
                   }}
