@@ -20,6 +20,8 @@ function SignIn() {
   const navigate = useNavigate();
 
   const signIn = async () => {
+    window.localStorage.setItem("token", data.data);
+    window.localStorage.setItem("isLoggedIn", true);
     const { data } = await axios.post(
       "http://localhost:7000/auth/signIn",
       {
@@ -143,7 +145,9 @@ function SignIn() {
               </button>
             </div>
             <div className="w-1/2 bg-violet-500 text-white rounded-l-2xl py-36 px-10 drop-shadow-2xl text-start">
-              <h2 className="text-4xl font-bold mb-5">Nice to see you again!</h2>
+              <h2 className="text-4xl font-bold mb-5">
+                Nice to see you again!
+              </h2>
               <p className="mb-7">
                 Look at what you&apos;ve missed by signing in to your account.
               </p>
@@ -164,4 +168,3 @@ function SignIn() {
 }
 
 export default SignIn;
-

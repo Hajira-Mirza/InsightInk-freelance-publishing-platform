@@ -3,7 +3,6 @@ const { models } = require("./index");
 module.exports = {
   createUser: async (body) => {
     try {
-      console.log("boddy", body);
       const user = await models.user.create({ ...body });
       return {
         response: user,

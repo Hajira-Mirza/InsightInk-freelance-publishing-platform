@@ -1,10 +1,10 @@
 const sequelize = require("../config/dbConfig");
 const user = require("./definitions/user");
-const order = require("./definitions/orders");
+const book = require("./definitions/book");
 
 const models = {
   user,
-  order,
+  book,
 };
 
 const db = {};

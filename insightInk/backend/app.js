@@ -6,7 +6,7 @@ const cors = require("cors");
 //import routes
 const userRouter = require("./routes/userRouter");
 const authRouter = require("./routes/authRouter");
-const ordersRouter = require("./routes/ordersRouter");
+const booksRouter = require("./routes/booksRouter");
 
 const app = express();
 //middlewares
@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
-app.use("/order", ordersRouter);
+app.use("/books", booksRouter);
 
 const { db } = require("./models/index");
 db.sequelize

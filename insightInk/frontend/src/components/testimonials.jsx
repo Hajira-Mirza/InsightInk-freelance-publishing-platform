@@ -1,147 +1,117 @@
-import { useEffect } from 'react';
-import Swiper from 'swiper';
-import 'swiper/css/bundle';
+import { useState } from "react";
 
-const Testimonials = () => {
-    useEffect(() => {
-      const swiper = new Swiper('.mySwiper', {
-        slidesPerView: 1,
-        spaceBetween: 32,
-        loop: true,
-        centeredSlides: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 32,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 32,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 32,
-          },
-        },
-      });
-  
-      return () => {
-        swiper.destroy();
-      };
-    }, []);
-  
-    return (
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex">
-          <div className="mb-16">
-            <span className="text-sm text-gray-500 font-medium text-center block mb-2">TESTIMONIAL</span>
-            <h2 className="text-4xl text-center font-bold text-gray-900">What our happy user says!</h2>
-          </div>
-          <div className="swiper mySwiper">
-            <div className="swiper-wrapper w-max">
-              {/* Testimonial slides */}
-              {/* Slide 1 */}
-              <div className="swiper-slide">
-                <div className="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
-                  <div>
-                    {/* Testimonial rating */}
-                    <div className="flex items-center mb-7 gap-2 text-amber-500 transition-all duration-500">
-                      <svg className="w-5 h-5" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846L5.54081 5.53051C5.86652 5.48319 6.14808 5.27862 6.29374 4.98347L8.10326 1.31699Z" fill="currentColor" />
-                      </svg>
-                      <span className="text-base font-semibold text-indigo-600">4.9</span>
-                    </div>
-                    {/* Testimonial content */}
-                    <p className="text-base text-gray-600 leading-6 transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">Pagedone has made it possible for me to stay on top of my portfolio and make informed decisions quickly and easily.</p>
-                  </div>
-                  {/* Testimonial author */}
-                  <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                    <img className="h-10 w-10" src="https://pagedone.io/asset/uploads/1696229969.png" alt="avatar" />
-                    <div className="block">
-                      <h5 className="text-gray-900 font-medium transition-all duration-500 mb-1">Jane D</h5>
-                      <span className="text-sm leading-4 text-gray-500">CEO</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Slide 2 */}
-              <div className="swiper-slide">
-                <div className="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
-                  <div>
-                    <div className="flex items-center mb-7 gap-2 text-amber-500 transition-all duration-500">
-                      <svg className="w-5 h-5" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846L5.54081 5.53051C5.86652 5.48319 6.14808 5.27862 6.29374 4.98347L8.10326 1.31699Z" fill="currentColor" />
-                      </svg>
-                      <span className="text-base font-semibold text-indigo-600">4.8</span>
-                    </div>
-                    <p className="text-base text-gray-600 leading-6 transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">Pagedones user-friendly interface makes managing my portfolio a breeze.</p>
-                  </div>
-                  <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                    <img className="h-10 w-10" src="https://pagedone.io/asset/uploads/1696230015.png" alt="avatar" />
-                    <div className="block">
-                      <h5 className="text-gray-900 font-medium transition-all duration-500 mb-1">John R.</h5>
-                      <span className="text-sm leading-4 text-gray-500">Investor</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Slide 3 */}
-              <div className="swiper-slide">
-                <div className="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
-                  <div>
-                    <div className="flex items-center mb-7 gap-2 text-amber-500 transition-all duration-500">
-                      <svg className="w-5 h-5" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846L5.54081 5.53051C5.86652 5.48319 6.14808 5.27862 6.29374 4.98347L8.10326 1.31699Z" fill="currentColor" />
-                      </svg>
-                      <span className="text-base font-semibold text-indigo-600">4.7</span>
-                    </div>
-                    <p className="text-base text-gray-600 leading-6 transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">Using Pagedone has significantly improved my workflow and helped me make better investment decisions.</p>
-                  </div>
-                  <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                    <img className="h-10 w-10" src="https://pagedone.io/asset/uploads/1696230124.png" alt="avatar" />
-                    <div className="block">
-                      <h5 className="text-gray-900 font-medium transition-all duration-500 mb-1">Alice M.</h5>
-                      <span className="text-sm leading-4 text-gray-500">Trader</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Slide 4 */}
-              <div className="swiper-slide">
-                <div className="group bg-white border border-solid border-gray-300 rounded-xl p-6 transition-all duration-500 w-full mx-auto hover:border-indigo-600 hover:shadow-sm slide_active:border-indigo-600">
-                  <div>
-                    <div className="flex items-center mb-7 gap-2 text-amber-500 transition-all duration-500">
-                      <svg className="w-5 h-5" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.10326 1.31699C8.47008 0.57374 9.52992 0.57374 9.89674 1.31699L11.7063 4.98347C11.8519 5.27862 12.1335 5.48319 12.4592 5.53051L16.5054 6.11846C17.3256 6.23765 17.6531 7.24562 17.0596 7.82416L14.1318 10.6781C13.8961 10.9079 13.7885 11.2389 13.8442 11.5632L14.5353 15.5931C14.6754 16.41 13.818 17.033 13.0844 16.6473L9.46534 14.7446C9.17402 14.5915 8.82598 14.5915 8.53466 14.7446L4.91562 16.6473C4.18199 17.033 3.32456 16.41 3.46467 15.5931L4.15585 11.5632C4.21148 11.2389 4.10393 10.9079 3.86825 10.6781L0.940384 7.82416C0.346867 7.24562 0.674378 6.23765 1.4946 6.11846L5.54081 5.53051C5.86652 5.48319 6.14808 5.27862 6.29374 4.98347L8.10326 1.31699Z" fill="currentColor" />
-                      </svg>
-                      <span className="text-base font-semibold text-indigo-600">4.6</span>
-                    </div>
-                    <p className="text-base text-gray-600 leading-6 transition-all duration-500 pb-8 group-hover:text-gray-800 slide_active:text-gray-800">Pagedone has simplified the way I track my investments and analyze market trends.</p>
-                  </div>
-                  <div className="flex items-center gap-5 border-t border-solid border-gray-200 pt-5">
-                    <img className="h-10 w-10" src="https://pagedone.io/asset/uploads/1696230242.png" alt="avatar" />
-                    <div className="block">
-                      <h5 className="text-gray-900 font-medium transition-all duration-500 mb-1">Mark S.</h5>
-                      <span className="text-sm leading-4 text-gray-500">Entrepreneur</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* End of additional slides */}
-            </div>
-            <div className="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
+function Testimonials() {
+  const testimonials = [
+    {
+      name: "Person One",
+      image: "images/a1.jpg",
+      designation: "Blogger",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate recusandae quam amet enim voluptates alias accusantium sapiente! Adipisci vero fugiat aliquid explicabo quas eius!",
+    },
+    {
+      name: "Person Two",
+      image: "images/a2.jpg",
+      designation: "Publisher",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate recusandae quam amet enim voluptates alias accusantium sapiente! Adipisci vero fugiat aliquid explicabo quas eius!",
+    },
+    {
+      name: "Person Three",
+      image: "images/a3.jpg",
+      designation: "Writer",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate recusandae quam amet enim voluptates alias accusantium sapiente! Adipisci vero fugiat aliquid explicabo quas eius!",
+    },
+    {
+      name: "Person Four",
+      image: "images/a4.jpg",
+      designation: "Entrepreneur",
+      text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate recusandae quam amet enim voluptates alias accusantium sapiente! Adipisci vero fugiat aliquid explicabo quas eius!",
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
   };
-  
-  export default Testimonials;
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="flex items-center justify-center h-screen bg-white">
+      <div className="relative w-full max-w-5xl">
+        <button
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 text-violet-500 focus:outline-none bg-transparent hover:bg-gray-200 rounded-full"
+          onClick={handlePrev}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 text-violet-500 focus:outline-none bg-transparent hover:bg-gray-200 rounded-full"
+          onClick={handleNext}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+        <div className="carousel">
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <h1 className="text-gray-700 text-4xl font-semibold mb-6 text-center">
+              What Others <span className="text-violet-500">Say</span> About Us
+            </h1>
+
+            <div className="px-6 py-8">
+              <div className="text-center">
+                <img
+                  className="w-20 h-20 mx-auto rounded-full"
+                  src={testimonials[activeIndex].image}
+                  alt={testimonials[activeIndex].name}
+                />
+                <h2 className="mt-4 text-xl font-semibold text-gray-800">
+                  {testimonials[activeIndex].name}
+                </h2>
+                <p className="mt-2 text-gray-700">
+                  {testimonials[activeIndex].designation}
+                </p>
+                <p className="mt-2 text-gray-700">
+                  {testimonials[activeIndex].text}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Testimonials;
