@@ -1,29 +1,26 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../../config/dbConfig");
 
-class book extends Model {}
+class author extends Model {}
 
-book.init(
+author.init(
   {
-    bookId: {
+    authorId: {
       primaryKey: true,
       type: DataTypes.STRING(255),
     },
-    bookName: {
-      allowNull: false,
-      type: DataTypes.STRING(34),
-    },
-    publisherName: {
-      allowNull: false,
-      type: DataTypes.STRING(34),
-    },
+
     authorName: {
       allowNull: false,
       type: DataTypes.STRING(34),
     },
-    bookInfo: {
+    country: {
       allowNull: false,
       type: DataTypes.STRING(),
+    },
+    bio: {
+      allowNull: false,
+      type: DataTypes.STRING(255),
     },
   },
   {
@@ -32,4 +29,4 @@ book.init(
     sequelize,
   }
 );
-module.exports = book;
+module.exports = author;

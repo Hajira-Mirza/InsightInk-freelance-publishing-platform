@@ -11,12 +11,6 @@ const YOUR_DOMAIN = "http://localhost:7001";
 module.exports = {
   createBook: async (body) => {
     try {
-      /*   const isUser = await userModel.getUserByUserByEmail(body.emailAddress);
-      if (isUser.error || isUser.response) {
-        return {
-          error: "This user already exists!",
-        };
-      } */
       const book = {
         bookId: uuid(),
         publisherName: body.publisherName,
