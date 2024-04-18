@@ -2,19 +2,18 @@ const userModel = require("../models/userModel");
 const { compare } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");
 require("dotenv").config();
+
 module.exports = {
   signIn: async (body) => {
     try {
       const user = await userModel.getUserByUserEmail(body.emailAddress);
-      if (user.error || user.response == null) {
+      if (!user || !user.response) {
         return {
-          error: "user Invalid Credentials",
+          error: "Invalid Credentials",
         };
       }
-      const isValid = await compare(
-        body.password,
-        user.response.dataValues.password
-      );
+      
+      const isValid = await compare(body.password, user.response.dataValues.password);
       if (!isValid) {
         return {
           error: "Invalid Credentials",
@@ -22,9 +21,27 @@ module.exports = {
       }
 
       delete user.response.dataValues.password;
-      const jwt = sign(user, process.env.SECRET, { expiresIn: "60000" });
+
+      const accessToken = sign(user.response.dataValues, process.env.ACCESS_TOKEN_SECRET, { expiresIn: "2592000s" });
+      const refreshToken = sign(user.response.dataValues, process.env.REFRESH_TOKEN_SECRET);
+
       return {
-        response: jwt,
+        response: {
+          accessToken,
+          refreshToken,
+        },
+      };
+    } catch (error) {
+      return {
+        error: error.message,
+      };
+    }
+  },
+  logout: async (res) => {
+    try {
+      clearRefreshToken(res);
+      return {
+        response: "Logged out successfully",
       };
     } catch (error) {
       return {

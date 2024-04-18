@@ -10,7 +10,7 @@ module.exports = {
         });
       };
       verify(
-        req.cookies.token, process.env.SECRET, (error, user) => {
+        req.cookies.token, process.env.ACCESS_TOKEN_SECRET, (error, user) => {
         if (error) {
             return res.send({
                 error: "Unauthorized User",

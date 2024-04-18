@@ -7,7 +7,11 @@ function MarketPlace() {
         <div>
           <Sidebar />
         </div>
-        <div className=" bg-blue-400 w-full text-black">hi</div>
+        <div className=" bg-white w-full text-black">
+        <div>
+          hi
+          </div>
+          </div>
       </div>
     </>
   );

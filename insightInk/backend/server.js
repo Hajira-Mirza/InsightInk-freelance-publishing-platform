@@ -3,15 +3,13 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-//import routes
 const userRouter = require("./routes/userRouter");
 const authRouter = require("./routes/authRouter");
 const booksRouter = require("./routes/booksRouter");
-const authorRouter = require("./routes/authorRouter");
-const publisherRouter = require("./routes/publisherRouter");
+const userDetailsRouter = require("./routes/userDetailsRouter");
+const planRouter = require("./routes/planRouter");
 
 const app = express();
-//middlewares
 app.use(express.json());
 app.use(
   cors({
@@ -25,14 +23,14 @@ app.use(cookieParser());
 app.use("/user", userRouter);
 app.use("/auth", authRouter);
 app.use("/books", booksRouter);
-app.use("/author", authorRouter);
-app.use("/publisher", publisherRouter);
+app.use("/userDetails", userDetailsRouter);
+app.use("/plan", planRouter);
 
 const { db } = require("./models/index");
 db.sequelize
   .sync({ alter: true, logging: false })
   .then(() => {
-    server.listen(port);
+    server.listen(PORT);
     server.on("error", onError);
     server.on("listening", onListening);
   })
@@ -41,6 +39,7 @@ db.sequelize
   });
 
 //listen for requests
+const PORT = process.env.PORT || 7000;
 app.listen(process.env.PORT, () => {
-  console.log("App is listening on post", process.env.PORT);
+  console.log(`Server is running on port ${PORT}.`);
 });

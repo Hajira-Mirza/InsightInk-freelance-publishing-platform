@@ -13,13 +13,10 @@ function Home() {
   const handleSignUp = () => {
     navigate("/register");
   };
-
   return (
     <>
-    <Navbar />
-      {/* Hero Section */}
+      <Navbar />
       <div className="flex flex-col sm:flex-row items-center justify-between min-h-screen bg-white py-7">
-        {/* Left Side */}
         <div className="w-full sm:w-1/2 px-6 sm:px-12 lg:px-20 order-2 sm:order-1">
           <h1 className="text-gray-700 text-4xl font-semibold mb-6">
             Your <span className="text-violet-500">Ultimate Destination</span>{" "}
@@ -32,12 +29,11 @@ function Home() {
           </p>
           <button
             className="text-white border-2 border-white bg-violet-500 rounded-full px-7 py-3 font-semibold hover:bg-white hover:text-violet-500 hover:border-violet-500 transition: all"
-            onClick={handleSignUp}
+            onClick={ handleSignUp }
           >
             Get started
           </button>
         </div>
-        {/* Right Side */}
         <div className="w-full sm:w-1/2 order-1 sm:order-2">
           <div className="h-full">
             <Component4 />
@@ -45,20 +41,26 @@ function Home() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-between min-h-screen bg-white py-7">
-        {/* Left Side */}
         <div className="w-full sm:w-1/2 px-6 sm:px-12 lg:px-20 order-2 sm:order-1 lg:order-2">
           <h1 className="text-gray-700 text-3xl font-semibold mb-6">
             Who <span className="text-violet-500">We</span> Are
           </h1>
-          <p className="text-gray-700 mb-8">
+          <p className="text-gray-700 mb-5">
             We are a pioneering web application dedicated to revolutionizing the
-            publishing industry. Our mission is to empower authors to share
-            their stories with the world while providing publishers with a
-            streamlined platform to discover fresh talent. Founded by a team of
-            passionate writers, editors, and publishing professionals,
-            InsightInk combines authors and publishers in one place where they
-            can: <span className="font-semibold">Discover, Connect, and Collaborate.</span>
+            publishing industry. InsightInk combines
+            authors and publishers in one place where they can:{" "}
+            <span className="font-semibold hover:text-violet-500"> Discover</span>
+            ,
+            <span className="font-semibold hover:text-violet-500"> Connect</span>
+            ,
+            <span className="font-semibold hover:text-violet-500"> Collaborate </span>
+            .
           </p>
+          <a href="/about" className="text-violet-500 font-semibold hover:text-violet-500 focus:text-violet-500 transition-all hover:underline"
+            
+          >
+            Click here to learn more...
+          </a>
         </div>
         <div className="w-full sm:w-1/2 p-7">
           <div className="h-full">
@@ -67,7 +69,6 @@ function Home() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-between min-h-screen bg-white py-7">
-        {/* Left Side */}
         <div className="w-full sm:w-1/2 px-6 sm:px-12 lg:px-20 order-2 sm:order-1">
           <h1 className="text-gray-700 text-3xl font-semibold mb-6">
             For <span className="text-violet-500">Authors</span>
@@ -115,8 +116,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-      {/* Publishers Section */}
       <div className="flex flex-col sm:flex-row items-center justify-between min-h-screen bg-white py-7">
         <div className="w-full sm:w-1/2 px-6 sm:px-12 lg:px-20 order-2 sm:order-1 lg:order-2">
           <h1 className="text-gray-700 text-3xl font-semibold mb-6">

@@ -12,6 +12,9 @@ import Books from "./vendorFiles/pages/books";
 import Marketplace from "./vendorFiles/pages/marketplace"
 import OffersReceived from "./vendorFiles/pages/offersReceived";
 import UpgradePlan from "./vendorFiles/pages/upgradePlan";
+import Success from "./vendorFiles/pages/success";
+import Failure from "./vendorFiles/pages/failure";
+import PaymentCancelled from "./vendorFiles/pages/paymentCancelled";
 function App() {
   const signIn = window.localStorage.getItem("isLoggedIn");
   return (
@@ -36,6 +39,8 @@ function App() {
           <Route path="contact">
             <Route index element={<Contact />} />
           </Route>
+
+
            <Route path="dashboard">
             <Route index element={<Dashboard />} />
           </Route>
@@ -54,8 +59,9 @@ function App() {
           <Route path="upgradePlan">
             <Route index element={<UpgradePlan />} />
           </Route>
-          {/* <Route exact path="/success" element={<Success />} />
-          <Route exact path="/failure" element={<Failure />} /> */}
+          <Route exact path="/success" element={<Success />} />
+          <Route exact path="/failure" element={<Failure />} />
+          <Route exact path="/cancel" element={<PaymentCancelled />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

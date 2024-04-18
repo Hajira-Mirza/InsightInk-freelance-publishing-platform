@@ -1,42 +1,38 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function Pricing() {
+  const navigate = useNavigate();
   const [selectedFrequency, setSelectedFrequency] = useState("monthly");
 
   const handleFrequencyChange = (frequency) => {
     setSelectedFrequency(frequency);
   };
+  
+  const handlePlansButton = () => {
+    alert("You need to sign up first.");
+    navigate("/register");
+  };
+ 
   const pricingTiers = [
     {
-      id: 1,
-      name: "Basic Plan",
+      planId: 1,
+      planName: "Essential Plan",
       monthlyPrice: 10,
       yearlyPrice: 100,
       features: [
-        "Access to publishing tools",
+        "Limited access",
         "Basic analytics",
-        "Limited support",
       ],
     },
     {
-      id: 2,
-      name: "Pro Plan",
+      planId: 2,
+      planName: "Premium Plan",
       monthlyPrice: 20,
       yearlyPrice: 200,
       features: [
-        "Advanced publishing tools",
+        "Full access",
         "Comprehensive analytics",
-        "Priority support",
-      ],
-    },
-    {
-      id: 3,
-      name: "Enterprise Plan",
-      monthlyPrice: 30,
-      yearlyPrice: 300,
-      features: [
-        "Custom publishing solutions",
-        "Dedicated account manager",
-        "24/7 premium support",
       ],
     },
   ];
@@ -64,13 +60,13 @@ function Pricing() {
           Yearly
         </button>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">
         {pricingTiers.map((tier) => (
           <div
             key={tier.id}
             className="bg-gray-50 p-6 rounded-lg shadow-lg text-center text-gray-700 pb-7"
           >
-            <h2 className="text-xl font-bold mb-2">{tier.name}</h2>
+            <h2 className="text-xl font-bold mb-2">{tier.planName}</h2>
             <p className="text-2xl font-bold mb-4">
               $
               {selectedFrequency === "monthly"
@@ -96,7 +92,9 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <button className="bg-violet-500 text-white px-4 py-2 rounded hover:bg-violet-600 transition-colors">
+            <button className="bg-violet-500 text-white px-4 py-2 rounded-full hover:bg-violet-600 transition-colors"
+            onClick={ handlePlansButton }
+            >
               Select Plan
             </button>
           </div>

@@ -3,8 +3,8 @@ const joi = require("joi");
 
 const createUserSchema = joi.object().keys({
   userName: joi.string().required(),
-  emailAddress: joi.string().required(),
-  password: joi.string().required(),
+  emailAddress: joi.string().required().pattern(new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$")),
+  password: joi.string().required().pattern(new RegExp("^[a-zA-Z0-9 ]*$")),
   role: joi.string().required(),
 });
 const updateUserSchema = joi.object().keys({

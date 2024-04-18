@@ -6,7 +6,7 @@ const stripe = require("stripe")(
   "sk_test_51P05JJLmoq3d8rZ8YE065yDQklJ1QSseZqGt8Cmir5HqaDZSsDFSOWW6jiByVLEMvGESGBGbWcZTBAxV4DOyEzv800hGRE67uI"
 );
 
-const YOUR_DOMAIN = "http://localhost:7001";
+const YOUR_DOMAIN = "http://localhost:7000";
 
 module.exports = {
   createBook: async (body) => {
@@ -31,7 +31,7 @@ module.exports = {
             price_data: {
               currency: "usd",
               product_data: {
-                name: Order.bookName,
+                name: book.bookName,
               },
               unit_amount: 1000, // Amount in cents
             },

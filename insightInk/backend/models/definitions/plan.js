@@ -1,26 +1,30 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../../config/dbConfig");
 
-class publisher extends Model {}
+class plan extends Model {}
 
-publisher.init(
+plan.init(
   {
-    publisherId: {
+    planId: {
       primaryKey: true,
       type: DataTypes.STRING(255),
     },
-
-    publisherName: {
+    planName: {
       allowNull: false,
       type: DataTypes.STRING(34),
     },
-    country: {
+    planPrice: {
+      type: DataTypes.STRING,
       allowNull: false,
-      type: DataTypes.STRING(),
     },
-    bio: {
+    planInterval: {
+      type: DataTypes.ENUM("month", "year"),
       allowNull: false,
-      type: DataTypes.STRING(255),
+    },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false, 
     },
   },
   {
@@ -29,4 +33,4 @@ publisher.init(
     sequelize,
   }
 );
-module.exports = publisher;
+module.exports = plan;
