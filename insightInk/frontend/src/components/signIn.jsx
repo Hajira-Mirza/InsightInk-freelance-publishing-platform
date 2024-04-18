@@ -44,7 +44,7 @@ function SignIn() {
       <div className="flex m-auto left-0 right-0 top-0 bottom-0 w-screen h-screen">
         <div className="flex m-auto left-0 right-0 top-0 bottom-0 w-full h-5/6 px-4 sm:px-10 md:px-20 lg:px-40 xl:px-48 py-1 text-center">
           <div className="bg-white rounded-2xl shadow-2xl flex w-full h-full">
-            <div className="w-3/4 bg-white text-gray-700 p-4 flex-col flex items-center justify-evenly">
+            <div className="w-3/4 bg-white text-gray-700 p-4 flex-col justify-evenly">
               <div className="text-left font-bold flex justify-start items-start">
                 Insight
                 <span className="text-violet-500">Ink</span>

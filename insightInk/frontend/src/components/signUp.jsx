@@ -91,7 +91,7 @@ function SignUp() {
                   onClick={() => handleClick("Author")}
                 >
                   <FaPenNib
-                    className={`text-xl mb-2 ${
+                    className={`text-lg mb-2 ${
                       selectedOption === "Author"
                         ? "text-violet-500"
                         : "text-gray-500"
@@ -108,7 +108,7 @@ function SignUp() {
                   onClick={() => handleClick("Publisher")}
                 >
                   <FaPrint
-                    className={`text-xl mb-2 ${
+                    className={`text-lg mb-2 ${
                       selectedOption === "Publisher"
                         ? "text-violet-500"
                         : "text-gray-500"
