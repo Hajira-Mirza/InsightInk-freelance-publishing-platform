@@ -1,7 +1,7 @@
 # Freelance Publishing Platform
 ![localhost_5173_](https://github.com/Hajira-Mirza/InsightInk-freelance-publishing-platform/assets/157340039/5d5d37f7-6922-4549-add5-6f727f382cc2)
 
-This responsive web application, designed with a minimalist aesthetic, serves as a freelance publishing platform connecting authors and publishers. Built using PostgreSQL, Firebase, Express.js, React.js, and Node.js, the platform facilitates collaboration and service offerings. Authors can showcase their literary work to gain recognition from publishers, while publishers can discover talent that meets their specific requirements.
+InsightInk is a responsive web application, designed with a minimalist aesthetic, serves as a freelance publishing platform connecting authors and publishers. Built using PostgreSQL, Firebase, Express.js, React.js, and Node.js, the platform facilitates collaboration and service offerings. Authors can showcase their literary work to gain recognition from publishers, while publishers can discover talent that meets their specific requirements.
 
 ![localhost_5173_ (2)](https://github.com/Hajira-Mirza/InsightInk-freelance-publishing-platform/assets/157340039/7dd6282b-d9fd-48ee-89ca-07f3043eb992)
 
